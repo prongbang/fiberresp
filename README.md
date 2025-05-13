@@ -153,9 +153,9 @@ func main() {
         return fiberresp.With(c).Response(NewBadRequest())
     })
 
-	app.Get("/test-username-required", func(c *fiber.Ctx) error {
-		return fiberresp.With(c).Response(NewFieldRequired())
-	})
+    app.Get("/test-username-required", func(c *fiber.Ctx) error {
+        return fiberresp.With(c).Response(NewFieldRequired())
+    })
 
     app.Get("/test-email-required", func(c *fiber.Ctx) error {
         err := fiberresp.New("VAL001", "validation.field.required").
@@ -176,14 +176,14 @@ func NewBadRequest() *fiberresp.ResponseBody {
 }
 
 func NewFieldRequired() *fiberresp.ResponseBody {
-	return &fiberresp.ResponseBody{
-		Code:       "VAL001",
-		Message:    "validation.field.required",
-		StatusCode: http.StatusBadRequest,
-		LocaleParams: map[string]any{
-			"field": "username",
-		},
-	}
+    return &fiberresp.ResponseBody{
+        Code:       "VAL001",
+        Message:    "validation.field.required",
+        StatusCode: http.StatusBadRequest,
+        LocaleParams: map[string]any{
+            "field": "username",
+        },
+    }
 }
 ```
 
@@ -253,7 +253,8 @@ type ResponseBody struct {
 - `WithParams(params map[string]any) *ResponseBody`: Set multiple localization parameters
 - `WithParam(key string, value any) *ResponseBody`: Set a single localization parameter
 - `With(ctx *fiber.Ctx) *Config`: Initialize response with Fiber context
-- `Response(err *ResponseBody) error`: Send response to client
+- `Response(resp *ResponseBody) error`: Send response to client
+- `Response(ctx *fiber.Ctx, resp *ResponseBody) error`: Send response to client
 
 ## License
 
