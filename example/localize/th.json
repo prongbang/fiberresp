@@ -1,0 +1,8 @@
+{
+  "errors.bad_request": "คำขอไม่ถูกต้อง",
+  "errors.not_found": "ไม่พบข้อมูล",
+  "errors.unauthorized": "ไม่มีสิทธิ์เข้าถึง",
+  "validation.field.required": "กรุณากรอกข้อมูล {{.field}}",
+  "validation.username.invalid": "ชื่อผู้ใช้ไม่ถูกต้อง",
+  "validation.username.length": "ชื่อผู้ใช้ต้องมีความยาวระหว่าง {{.min}} ถึง {{.max}} ตัวอักษร"
+}
