@@ -217,6 +217,12 @@ Example of localization JSON files:
 
 ## Response Structure
 
+Use localize by `Accept-Language` header
+
+```sh
+curl -H "Accept-Language: en" http://localhost:3000/test-not-found
+```
+
 The JSON response format:
 
 ```json
